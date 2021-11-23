@@ -3,6 +3,7 @@
 ## Made to communicate with VoidSecurity Memebers. ##
 ## https://voidsecurity.ml                         ##
 ## Coded by: drk                                   ##
+## https://github.com/DaRkSurface/envoid           ##
 #####################################################
 
 
@@ -140,7 +141,7 @@ def options():
         time.sleep(0.5)
         quit()
     else:
-        print("Did not reckognizq input, quitting.")
+        print("Did not reckognize input, quitting.")
         time.sleep(0.5)
         quit()
     
