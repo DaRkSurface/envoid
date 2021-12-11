@@ -1,9 +1,8 @@
 #####################################################
 ## Void Encryption/Decryption tool (EnVoid)        ##
-## Made to communicate with VoidSecurity Memebers. ##
+## Fun Project to VoidSecurity                     ##
 ## https://voidsecurity.ml                         ##
 ## Coded by: drk                                   ##
-## https://github.com/DaRkSurface/envoid           ##
 #####################################################
 
 
@@ -11,7 +10,7 @@
 import os
 import time
 from cryptography.fernet import Fernet
-import clipboard
+
 
 #################################################
 
@@ -141,7 +140,7 @@ def options():
         time.sleep(0.5)
         quit()
     else:
-        print("Did not reckognize input, quitting.")
+        print("Did not reckognizq input, quitting.")
         time.sleep(0.5)
         quit()
     
