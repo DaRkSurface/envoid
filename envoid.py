@@ -10,7 +10,8 @@
 import os
 import time
 from cryptography.fernet import Fernet
-
+from termcolor import colored
+import pyfade
 
 #################################################
 
@@ -27,13 +28,16 @@ def encrypt():
     print("[*] Encrypting..\n ")
     time.sleep(0.3)
     envoided = envoid.encrypt(bytetext)
-    
-
-    print(str(envoided, 'utf-8'))
+    print(colored("-----------------------------------------------------------------------------------------------------", "green"))
+    print(colored("--Envoided Ciphertxt--:", "red"))
+    print(colored(str(envoided, 'utf-8', "red")))
+    print(colored("-----------------------------------------------------------------------------------------------------", "green"))
+    print(colored("--KEY--:", "red"))
     print(str(key, 'utf-8'))
+    print(colored("-----------------------------------------------------------------------------------------------------", "green"))
 
     time.sleep(8)
-    print("""
+    print("""\n\n
     ------------------------------------------
     [1] Decrypt again.
     [2] Options
@@ -70,7 +74,7 @@ def decrypt():
     devoided = devoid.decrypt(bytetext)
     print(str(devoided, 'utf-8'))
     time.sleep(8)
-    print("""
+    print("""\n\n
     ------------------------------------------
     [1] Decrypt again.
     [2] Options
@@ -96,14 +100,16 @@ def decrypt():
         quit()
 
 def art():
-    print("""
+    print(pyfade.Fade.Horizontal(pyfade.Colors.blue_to_cyan, """
                                
-     _____     _____     _   _ 
-    |   __|___|  |  |___|_|_| |
-    |   __|   |  |  | . | | . |
-    |_____|_|_|\___/|___|_|___|
-                           
-    """)
+    ███████╗███╗   ██╗██╗   ██╗ ██████╗ ██╗██████╗ 
+    ██╔════╝████╗  ██║██║   ██║██╔═══██╗██║██╔══██╗
+    █████╗  ██╔██╗ ██║██║   ██║██║   ██║██║██║  ██║
+    ██╔══╝  ██║╚██╗██║╚██╗ ██╔╝██║   ██║██║██║  ██║
+    ███████╗██║ ╚████║ ╚████╔╝ ╚██████╔╝██║██████╔╝
+    ╚══════╝╚═╝  ╚═══╝  ╚═══╝   ╚═════╝ ╚═╝╚═════╝ 
+                                               
+"""))
 
 def options():
     optionslayout = print("""
@@ -119,12 +125,16 @@ def options():
         decrypt()
     elif option == "3":
         clearcmd()
-        print("""
-         _____     _____     _   _ 
-        |   __|___|  |  |___|_|_| |
-        |   __|   |  |  | . | | . |
-        |_____|_|_|\___/|___|_|___|
-                   
+        print(pyfade.Fade.Horizontal(pyfade.Colors.blue_to_cyan, """
+  
+    ███████╗███╗   ██╗██╗   ██╗ ██████╗ ██╗██████╗ 
+    ██╔════╝████╗  ██║██║   ██║██╔═══██╗██║██╔══██╗
+    █████╗  ██╔██╗ ██║██║   ██║██║   ██║██║██║  ██║
+    ██╔══╝  ██║╚██╗██║╚██╗ ██╔╝██║   ██║██║██║  ██║
+    ███████╗██║ ╚████║ ╚████╔╝ ╚██████╔╝██║██████╔╝
+    ╚══════╝╚═╝  ╚═══╝  ╚═══╝   ╚═════╝ ╚═╝╚═════╝ 
+        """)) 
+        print("""                                            
                 Coded by drk
 
         Encryptor/Decrytor for VoidSecurity
@@ -140,7 +150,7 @@ def options():
         time.sleep(0.5)
         quit()
     else:
-        print("Did not reckognizq input, quitting.")
+        print("Did not reckognize input, quitting.")
         time.sleep(0.5)
         quit()
     
