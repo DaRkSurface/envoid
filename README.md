@@ -1,2 +1,2 @@
 # envoid
-An encrypter and decrypter for Envoid Security. 
+An encrypter and decrypter for void Security. 
